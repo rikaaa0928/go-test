@@ -18,3 +18,27 @@ func TestPointPaas(t *testing.T) {
 	x.Y.X[0] = 3
 	t.Log(x.X, *x.Y, y.X, *y.Y)
 }
+
+func TestPointerPrint(t *testing.T) {
+	a := generic.TakeAddr(1)
+	//t.Logf("%p", a)
+	b := a
+	t.Logf("%p", a)
+	t.Logf("%p", &a)
+	t.Logf("%p", b)
+	t.Logf("%p", &b)
+	l := []int{1, 2}
+	t.Logf("%p", l)
+	t.Logf("%p", &l[0])
+	for i, v := range l {
+		t.Logf("%p,%p", &v, &l[i])
+	}
+	pl := []*int{generic.TakeAddr(1), generic.TakeAddr(2)}
+	t.Logf("%p", pl)
+	t.Logf("%p", &pl)
+	t.Logf("%p", pl[0])
+	t.Logf("%p", &pl[0])
+	for i, v := range pl {
+		t.Logf("%p,%p,%p,%p", v, pl[i], &v, &l[i])
+	}
+}
