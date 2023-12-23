@@ -2,5 +2,5 @@
 .vscode
 main
 feishu_test.go
-gemini_test.go
+gemini*
 nacos_test.go
