@@ -1,2 +1,6 @@
 .idea
 .vscode
+main
+feishu_test.go
+gemini_test.go
+nacos_test.go
